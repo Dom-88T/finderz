@@ -169,7 +169,7 @@ export default function LoginScreen() {
         setLoading(false);
         
         // Navigate to dashboard on successful login
-        router.push('/dashboard/index');
+        router.push('/dashboard');
       }, 1500);
     } catch (error) {
       setLoading(false);

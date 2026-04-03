@@ -66,7 +66,7 @@ export default function ServicesSearchScreen() {
       </Text>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => router.push('/dashboard/index')}
+        onPress={() => router.push('/dashboard')}
       >
         <Text style={styles.buttonText}>← Go to Dashboard</Text>
       </TouchableOpacity>

@@ -411,7 +411,7 @@ export default function DashboardScreen() {
   };
 
   // Render professional card
-  const renderProfessionalCard = ({ item }) => (
+  const renderProfessionalCard = ({ item }: { item: typeof DUMMY_PROFESSIONALS[0] }) => (
     <View style={styles.professionalCard}>
       <View style={styles.professionalHeader}>
         <View style={{ flex: 1 }}>

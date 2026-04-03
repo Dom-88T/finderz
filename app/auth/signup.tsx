@@ -220,7 +220,7 @@ export default function SignUpScreen() {
           [
             {
               text: 'Continue',
-              onPress: () => router.push('/dashboard/index'),
+              onPress: () => router.push('/dashboard'),
             },
           ]
         );
