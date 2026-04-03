@@ -39,108 +39,123 @@ import { useRouter } from 'expo-router';
  * - verified: Whether verified by community
  */
 const DUMMY_PROFESSIONALS = [
-  {
-    id: '1',
-    name: 'Chisom Okafor',
-    service: 'Electrician',
-    rating: 4.8,
-    reviews: 47,
-    price: '₦5,000 - ₦15,000',
-    location: 'Yaba, Lagos',
-    verified: true,
-    bio: '15 years experience in electrical installations and repairs',
-  },
-  {
-    id: '2',
-    name: 'Tunde Adeniran',
-    service: 'Plumber',
-    rating: 4.6,
-    reviews: 34,
-    price: '₦3,000 - ₦12,000',
-    location: 'Victoria Island, Lagos',
-    verified: true,
-    bio: 'Expert in fixing pipes, leaks, and bathroom fixtures',
-  },
-  {
-    id: '3',
-    name: 'Kunle Bello',
-    service: 'Builder/Carpenter',
-    rating: 4.9,
-    reviews: 52,
-    price: '₦8,000 - ₦25,000',
-    location: 'Ikeja, Lagos',
-    verified: true,
-    bio: 'Construction and carpentry work for homes and offices',
-  },
-  {
-    id: '4',
-    name: 'Amara Eze',
-    service: 'Barber',
-    rating: 4.7,
-    reviews: 28,
-    price: '₦1,500 - ₦3,000',
-    location: 'Surulere, Lagos',
-    verified: true,
-    bio: 'Professional barber with modern cutting techniques',
-  },
-  {
-    id: '5',
-    name: 'Bola Obi',
-    service: 'House Cleaner',
-    rating: 4.5,
-    reviews: 19,
-    price: '₦2,000 - ₦8,000',
-    location: 'Lekki, Lagos',
-    verified: true,
-    bio: 'Deep cleaning and regular maintenance services',
-  },
-  {
-    id: '6',
-    name: 'Zainab Ibrahim',
-    service: 'Tailor',
-    rating: 4.7,
-    reviews: 31,
-    price: '₦1,000 - ₦5,000',
-    location: 'Shomolu, Lagos',
-    verified: true,
-    bio: 'Custom tailoring and clothing alterations',
-  },
-  {
-    id: '7',
-    name: 'Marcus Nwankwo',
-    service: 'AC Technician',
-    rating: 4.8,
-    reviews: 25,
-    price: '₦4,000 - ₦10,000',
-    location: 'Alagbole, Lagos',
-    verified: true,
-    bio: 'Air conditioning installation, repair, and maintenance',
-  },
-  {
-    id: '8',
-    name: 'Grace Ogunwale',
-    service: 'Interior Designer',
-    rating: 4.9,
-    reviews: 41,
-    price: '₦10,000 - ₦50,000',
-    location: 'Ikoyi, Lagos',
-    verified: true,
-    bio: 'Professional interior design consultation and implementation',
-  },
+  { id: '1', name: 'Chisom Okafor', service: 'Electrician', rating: 4.8, reviews: 47, price: '₦5,000 - ₦15,000', location: 'Yaba, Lagos', verified: true, bio: '15 years experience in electrical installations' },
+  { id: '2', name: 'Tunde Adeniran', service: 'Plumber', rating: 4.6, reviews: 34, price: '₦3,000 - ₦12,000', location: 'Victoria Island, Lagos', verified: true, bio: 'Expert in fixing pipes and leaks' },
+  { id: '3', name: 'Kunle Bello', service: 'Builder', rating: 4.9, reviews: 52, price: '₦8,000 - ₦25,000', location: 'Ikeja, Lagos', verified: true, bio: 'Construction and carpentry specialist' },
+  { id: '4', name: 'Amara Eze', service: 'Barber', rating: 4.7, reviews: 28, price: '₦1,500 - ₦3,000', location: 'Surulere, Lagos', verified: true, bio: 'Professional barber with modern techniques' },
+  { id: '5', name: 'Bola Obi', service: 'Cleaner', rating: 4.5, reviews: 19, price: '₦2,000 - ₦8,000', location: 'Lekki, Lagos', verified: true, bio: 'Deep cleaning and maintenance' },
+  { id: '6', name: 'Zainab Ibrahim', service: 'Tailor', rating: 4.7, reviews: 31, price: '₦1,000 - ₦5,000', location: 'Shomolu, Lagos', verified: true, bio: 'Custom tailoring and alterations' },
+  { id: '7', name: 'Marcus Nwankwo', service: 'AC Technician', rating: 4.8, reviews: 25, price: '₦4,000 - ₦10,000', location: 'Alagbole, Lagos', verified: true, bio: 'AC installation and maintenance' },
+  { id: '8', name: 'Grace Ogunwale', service: 'Graphic Designer', rating: 4.9, reviews: 41, price: '₦10,000 - ₦50,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Professional graphic design services' },
+  { id: '9', name: 'Seun Alabi', service: 'Mechanic', rating: 4.6, reviews: 38, price: '₦4,000 - ₦20,000', location: 'Mushin, Lagos', verified: true, bio: 'Car repair and maintenance expert' },
+  { id: '10', name: 'Tayo Okafor', service: 'Welder', rating: 4.7, reviews: 23, price: '₦3,000 - ₦10,000', location: 'Oshodi, Lagos', verified: true, bio: 'Professional welding services' },
+  { id: '11', name: 'Ngozi Eze', service: 'Beautician', rating: 4.8, reviews: 56, price: '₦2,000 - ₦8,000', location: 'Badagry, Lagos', verified: true, bio: 'Makeup and beauty styling' },
+  { id: '12', name: 'Adebayo Ayoola', service: 'Carpenter', rating: 4.6, reviews: 29, price: '₦5,000 - ₦15,000', location: 'Gbagada, Lagos', verified: true, bio: 'Furniture and woodwork specialist' },
+  { id: '13', name: 'Chioma Okoro', service: 'Home Tutor', rating: 4.9, reviews: 45, price: '₦2,000 - ₦5,000', location: 'Ogba, Lagos', verified: true, bio: 'Expert in Mathematics and Sciences' },
+  { id: '14', name: 'Solomon Nkosi', service: 'Painter', rating: 4.5, reviews: 35, price: '₦3,000 - ₦12,000', location: 'Alimosho, Lagos', verified: true, bio: 'Interior and exterior painting' },
+  { id: '15', name: 'Adekunle Bando', service: 'Gas Fitter', rating: 4.7, reviews: 18, price: '₦2,000 - ₦7,000', location: 'Epe, Lagos', verified: true, bio: 'Gas pipeline installation and repair' },
+  { id: '16', name: 'Jumoke Adeyemi', service: 'Photographer', rating: 4.8, reviews: 52, price: '₦15,000 - ₦50,000', location: 'Ajah, Lagos', verified: true, bio: 'Professional photography for all events' },
+  { id: '17', name: 'Chinedu Uba', service: 'Electrician', rating: 4.6, reviews: 41, price: '₦4,000 - ₦12,000', location: 'Somolu, Lagos', verified: true, bio: 'Electrical repairs and installations' },
+  { id: '18', name: 'Fatima Aliyu', service: 'Hairstylist', rating: 4.9, reviews: 63, price: '₦1,000 - ₦4,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Expert hair styling and treatment' },
+  { id: '19', name: 'Kemi Oladele', service: 'Chef', rating: 4.7, reviews: 38, price: '₦10,000 - ₦30,000', location: 'Lekki, Lagos', verified: true, bio: 'Professional catering and cooking' },
+  { id: '20', name: 'Rade Okonkwo', service: 'Plumber', rating: 4.8, reviews: 47, price: '₦3,000 - ₦10,000', location: 'Shomolu, Lagos', verified: true, bio: 'Expert plumbing solutions' },
+  { id: '21', name: 'Blessing Amakiri', service: 'Web Developer', rating: 4.7, reviews: 29, price: '₦30,000 - ₦100,000', location: 'Victoria Island, Lagos', verified: true, bio: 'Full-stack web development' },
+  { id: '22', name: 'Adenuga Bankole', service: 'AC Technician', rating: 4.6, reviews: 32, price: '₦3,000 - ₦9,000', location: 'Yaba, Lagos', verified: true, bio: 'AC repair and servicing' },
+  { id: '23', name: 'Folake Adeyemi', service: 'Cleaner', rating: 4.8, reviews: 44, price: '₦2,000 - ₦6,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Professional cleaning services' },
+  { id: '24', name: 'Ibrahim Sule', service: 'Driver', rating: 4.5, reviews: 26, price: '₦3,000 - ₦8,000', location: 'Alimosho, Lagos', verified: true, bio: 'Reliable and safe driving services' },
+  { id: '25', name: 'Adaeze Mbaka', service: 'Makeup Artist', rating: 4.9, reviews: 51, price: '₦5,000 - ₦20,000', location: 'Surulere, Lagos', verified: true, bio: 'Professional makeup for all occasions' },
+  { id: '26', name: 'Oluwaseun Obi', service: 'Locksmith', rating: 4.6, reviews: 22, price: '₦2,000 - ₦7,000', location: 'Gbagada, Lagos', verified: true, bio: 'Lock repair and installation' },
+  { id: '27', name: 'Sandra Okafor', service: 'Nutritionist', rating: 4.8, reviews: 35, price: '₦5,000 - ₦15,000', location: 'Lekki, Lagos', verified: true, bio: 'Diet and nutrition consultation' },
+  { id: '28', name: 'Damilare Adesegun', service: 'Personal Trainer', rating: 4.7, reviews: 39, price: '₦3,000 - ₦10,000', location: 'Yaba, Lagos', verified: true, bio: 'Professional fitness coaching' },
+  { id: '29', name: 'Uche Nwosu', service: 'UI/UX Designer', rating: 4.9, reviews: 28, price: '₦25,000 - ₦80,000', location: 'Gbagada, Lagos', verified: true, bio: 'Digital design excellence' },
+  { id: '30', name: 'Miriam Adeyinka', service: 'Florist', rating: 4.7, reviews: 33, price: '₦5,000 - ₦20,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Beautiful flower arrangements' },
+  { id: '31', name: 'Kwame Asante', service: 'Videographer', rating: 4.8, reviews: 41, price: '₦20,000 - ₦60,000', location: 'Victoria Island, Lagos', verified: true, bio: 'Professional video production' },
+  { id: '32', name: 'Zara Khalil', service: 'Legal Advisor', rating: 4.9, reviews: 24, price: '₦15,000 - ₦50,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Corporate legal consultation' },
+  { id: '33', name: 'Obi Ejiofor', service: 'Real Estate Agent', rating: 4.6, reviews: 37, price: '₦5,000 - ₦100,000', location: 'Lekki, Lagos', verified: true, bio: 'Property sales and leasing' },
+  { id: '34', name: 'Hafsat Musa', service: 'Tax Consultant', rating: 4.8, reviews: 19, price: '₦10,000 - ₦40,000', location: 'VI, Lagos', verified: true, bio: 'Tax planning and filing' },
+  { id: '35', name: 'Ridwan Ademoye', service: 'Accountant', rating: 4.7, reviews: 31, price: '₦8,000 - ₦30,000', location: 'Yaba, Lagos', verified: true, bio: 'Bookkeeping and accounting services' },
+  { id: '36', name: 'Louise Okonkwo', service: 'Travel Agent', rating: 4.8, reviews: 44, price: '₦5,000 - ₦25,000', location: 'Lekki Lagos', verified: true, bio: 'Travel planning and bookings' },
+  { id: '37', name: 'Chukwu Mathew', service: 'Tour Guide', rating: 4.6, reviews: 28, price: '₦3,000 - ₦12,000', location: 'Badagry, Lagos', verified: true, bio: 'Expert tour guiding services' },
+  { id: '38', name: 'Abeni Adeosun', service: 'Tailor', rating: 4.9, reviews: 52, price: '₦1,500 - ₦6,000', location: 'Ebute Metta, Lagos', verified: true, bio: 'Quality tailoring and design' },
+  { id: '39', name: 'Peter Adeleke', service: 'Phone Repair', rating: 4.7, reviews: 39, price: '₦2,000 - ₦8,000', location: 'Oshodi, Lagos', verified: true, bio: 'Phone repair and replacement' },
+  { id: '40', name: 'Nneka Okafor', service: 'Computer Repair', rating: 4.8, reviews: 35, price: '₦3,000 - ₦10,000', location: 'Ikeja, Lagos', verified: true, bio: 'Computer and laptop repair' },
+  { id: '41', name: 'Tunde Oyedele', service: 'Car Wash', rating: 4.6, reviews: 41, price: '₦2,000 - ₦5,000', location: 'Lekki, Lagos', verified: true, bio: 'Professional car detailing' },
+  { id: '42', name: 'Ngozi Uchenna', service: 'Dry Cleaning', rating: 4.7, reviews: 32, price: '₦1,000 - ₦3,000', location: 'Surulere, Lagos', verified: true, bio: 'Quality dry cleaning services' },
+  { id: '43', name: 'Yusuf Hamzat', service: 'Laundry Service', rating: 4.5, reviews: 25, price: '₦500 - ₦2,000', location: 'Mushin, Lagos', verified: true, bio: 'Regular laundry and ironing' },
+  { id: '44', name: 'Ayo Olatunji', service: 'Security Guard', rating: 4.8, reviews: 38, price: '₦3,000 - ₦8,000', location: 'VI, Lagos', verified: true, bio: 'Professional security services' },
+  { id: '45', name: 'Zainab Mustapha', service: 'Massage Therapist', rating: 4.9, reviews: 46, price: '₦3,000 - ₦10,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Therapeutic massage services' },
+  { id: '46', name: 'David Okafor', service: 'Physiotherapist', rating: 4.7, reviews: 33, price: '₦5,000 - ₦15,000', location: 'Lekki, Lagos', verified: true, bio: 'Physical therapy and rehabilitation' },
+  { id: '47', name: 'Suzy Adeyemi', service: 'Yoga Instructor', rating: 4.8, reviews: 29, price: '₦2,000 - ₦5,000', location: 'Yaba, Lagos', verified: true, bio: 'Certified yoga classes' },
+  { id: '48', name: 'Ejiro Olugbemi', service: 'Gym Trainer', rating: 4.6, reviews: 42, price: '₦3,000 - ₦10,000', location: 'VI, Lagos', verified: true, bio: 'Personal fitness training' },
+  { id: '49', name: 'Amina Sani', service: 'Language Tutor', rating: 4.9, reviews: 37, price: '₦2,000 - ₦6,000', location: 'Gbagada, Lagos', verified: true, bio: 'English and French tutoring' },
+  { id: '50', name: 'Clement Eze', service: 'Music Teacher', rating: 4.7, reviews: 26, price: '₦3,000 - ₦8,000', location: 'Somolu, Lagos', verified: true, bio: 'Piano and guitar lessons' },
+  { id: '51', name: 'Foluso Adeyemi', service: 'Painting', rating: 4.5, reviews: 20, price: '₦30,000 - ₦100,000', location: 'Lekki, Lagos', verified: true, bio: 'Fine art and portrait painting' },
+  { id: '52', name: 'Ibrahim Adamu', service: 'Courier', rating: 4.6, reviews: 34, price: '₦1,000 - ₦5,000', location: 'Gbagada, Lagos', verified: true, bio: 'Fast and reliable delivery' },
+  { id: '53', name: 'Blessing Okechukwu', service: 'Art Teacher', rating: 4.8, reviews: 28, price: '₦2,000 - ₦5,000', location: 'Yaba, Lagos', verified: true, bio: 'Visual arts tutoring' },
+  { id: '54', name: 'Jessica Okafor', service: 'Driving Instructor', rating: 4.7, reviews: 40, price: '₦2,000 - ₦6,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Professional driving lessons' },
+  { id: '55', name: 'Mohammed Aliyu', service: 'Generator Repair', rating: 4.6, reviews: 23, price: '₦3,000 - ₦10,000', location: 'Alimosho, Lagos', verified: true, bio: 'Generator servicing and repair' },
+  { id: '56', name: 'Oluwatoyin Adekunle', service: 'Solar Installation', rating: 4.9, reviews: 31, price: '₦50,000 - ₦200,000', location: 'Lekki, Lagos', verified: true, bio: 'Solar panel installation' },
+  { id: '57', name: 'Gideon Adeyeme', service: 'Mechanic', rating: 4.7, reviews: 36, price: '₦3,000 - ₦15,000', location: 'Ikeja, Lagos', verified: true, bio: 'Vehicle maintenance expert' },
+  { id: '58', name: 'Funmi Ayokunle', service: 'Cleaner', rating: 4.8, reviews: 39, price: '₦2,000 - ₦7,000', location: 'VI, Lagos', verified: true, bio: 'Residential and office cleaning' },
+  { id: '59', name: 'Raji Ogunwale', service: 'Data Analyst', rating: 4.9, reviews: 18, price: '₦20,000 - ₦80,000', location: 'Gbagada, Lagos', verified: true, bio: 'Data analysis and visualization' },
+  { id: '60', name: 'Caroline Oluwaseun', service: 'Mobile App Developer', rating: 4.8, reviews: 24, price: '₦40,000 - ₦150,000', location: 'Ikoyi, Lagos', verified: true, bio: 'iOS and Android app development' },
+  { id: '61', name: 'Taiwo Okafor', service: 'Barber', rating: 4.7, reviews: 45, price: '₦1,000 - ₦3,000', location: 'Yaba, Lagos', verified: true, bio: 'Expert barber services' },
+  { id: '62', name: 'Aisha Mohammed', service: 'Insurance Agent', rating: 4.6, reviews: 21, price: '₦5,000 - ₦50,000', location: 'VI, Lagos', verified: true, bio: 'Insurance consultation and sales' },
+  { id: '63', name: 'Victor Ejiro', service: 'Bicycle Repair', rating: 4.7, reviews: 17, price: '₦1,000 - ₦5,000', location: 'Mushin, Lagos', verified: true, bio: 'Bicycle maintenance and repair' },
+  { id: '64', name: 'Chioma Adeyemi', service: 'Laptop Repair', rating: 4.8, reviews: 32, price: '₦2,000 - ₦10,000', location: 'Gbagada, Lagos', verified: true, bio: 'Expert laptop repair services' },
+  { id: '65', name: 'Samuel Adekunle', service: 'TV Repair', rating: 4.6, reviews: 28, price: '₦2,000 - ₦8,000', location: 'Somolu, Lagos', verified: true, bio: 'Television repair and servicing' },
+  { id: '66', name: 'Blessing Njoku', service: 'Appliance Repair', rating: 4.7, reviews: 34, price: '₦2,000 - ₦10,000', location: 'Lekki, Lagos', verified: true, bio: 'Home appliance repair' },
+  { id: '67', name: 'Aderonke Adeosun', service: 'Swimming Coach', rating: 4.9, reviews: 25, price: '₦3,000 - ₦10,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Professional swimming instruction' },
+  { id: '68', name: 'Chinedu Obi', service: 'Fitness Coach', rating: 4.8, reviews: 38, price: '₦3,000 - ₦12,000', location: 'VI, Lagos', verified: true, bio: 'Holistic fitness coaching' },
+  { id: '69', name: 'Fatimah Ademiluyi', service: 'Life Coach', rating: 4.9, reviews: 33, price: '₦5,000 - ₦20,000', location: 'Lekki, Lagos', verified: true, bio: 'Personal development coaching' },
+  { id: '70', name: 'Oluwaseun Adeleke', service: 'Electrician', rating: 4.6, reviews: 43, price: '₦4,000 - ₦14,000', location: 'Ikeja, Lagos', verified: true, bio: 'Electrical wiring and repairs' },
+  { id: '71', name: 'Justina Onwuka', service: 'Plumber', rating: 4.8, reviews: 39, price: '₦3,000 - ₦11,000', location: 'Gbagada, Lagos', verified: true, bio: 'Quality plumbing work' },
+  { id: '72', name: 'Emeka Okonkwo', service: 'Builder', rating: 4.7, reviews: 44, price: '₦7,000 - ₦24,000', location: 'VI, Lagos', verified: true, bio: 'Construction and masonry' },
+  { id: '73', name: 'Adenike Adegunle', service: 'Cleaner', rating: 4.6, reviews: 36, price: '₦1,500 - ₦5,000', location: 'Yaba, Lagos', verified: true, bio: 'Efficient cleaning services' },
+  { id: '74', name: 'Rantimi Adeyemi', service: 'Painter', rating: 4.8, reviews: 31, price: '₦2,500 - ₦10,000', location: 'Somolu, Lagos', verified: true, bio: 'Professional painting services' },
+  { id: '75', name: 'Seun Adeleke', service: 'AC Technician', rating: 4.7, reviews: 29, price: '₦3,500 - ₦9,500', location: 'Lekki, Lagos', verified: true, bio: 'AC expert services' },
+  { id: '76', name: 'Stella Okonkwo', service: 'Tailor', rating: 4.8, reviews: 47, price: '₦1,200 - ₦5,500', location: 'Ikeja, Lagos', verified: true, bio: 'Skilled tailoring' },
+  { id: '77', name: 'Lanre Olatunji', service: 'Mechanic', rating: 4.9, reviews: 33, price: '₦3,500 - ₦18,000', location: 'Gbagada, Lagos', verified: true, bio: 'Expert mechanic' },
+  { id: '78', name: 'Priscilla Amebo', service: 'Barber', rating: 4.6, reviews: 34, price: '₦1,200 - ₦2,800', location: 'Lekki, Lagos', verified: true, bio: 'Quality barber' },
+  { id: '79', name: 'Karim Hassan', service: 'Welder', rating: 4.7, reviews: 20, price: '₦2,500 - ₦8,500', location: 'Alimosho, Lagos', verified: true, bio: 'Professional welding' },
+  { id: '80', name: 'Blessing Awoniyi', service: 'Beautician', rating: 4.8, reviews: 51, price: '₦1,500 - ₦7,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Beauty and makeup expert' },
+  { id: '81', name: 'Oladipo Akeem', service: 'Driver', rating: 4.6, reviews: 29, price: '₦2,500 - ₦7,500', location: 'VI, Lagos', verified: true, bio: 'Safe driving services' },
+  { id: '82', name: 'Mfon Ekpo', service: 'Cleaner', rating: 4.7, reviews: 42, price: '₦1,800 - ₦6,000', location: 'Yaba, Lagos', verified: true, bio: 'Reliable cleaning' },
+  { id: '83', name: 'Abiodun Okafor', service: 'Carpenter', rating: 4.8, reviews: 27, price: '₦4,500 - ₦13,500', location: 'Gbagada, Lagos', verified: true, bio: 'Quality carpentry' },
+  { id: '84', name: 'Zainab Usman', service: 'Hairstylist', rating: 4.9, reviews: 58, price: '₦1,000 - ₦4,500', location: 'Somolu, Lagos', verified: true, bio: 'Expert hair styling' },
+  { id: '85', name: 'Chukwudi Njoku', service: 'Gas Fitter', rating: 4.6, reviews: 16, price: '₦1,800 - ₦6,500', location: 'Lekki, Lagos', verified: true, bio: 'Gas services' },
+  { id: '86', name: 'Tunde Adeojo', service: 'Electrician', rating: 4.8, reviews: 44, price: '₦4,500 - ₦14,500', location: 'Ikoyi, Lagos', verified: true, bio: 'Electrical expert' },
+  { id: '87', name: 'Grace Mbah', service: 'Home Tutor', rating: 4.9, reviews: 48, price: '₦1,800 - ₦4,500', location: 'VI, Lagos', verified: true, bio: 'Excellent tuition' },
+  { id: '88', name: 'Rasheed Adebayo', service: 'Plumber', rating: 4.7, reviews: 36, price: '₦2,800 - ₦11,000', location: 'Ikeja, Lagos', verified: true, bio: 'Plumbing specialist' },
+  { id: '89', name: 'Chioma Ugwu', service: 'Chef', rating: 4.8, reviews: 40, price: '₦8,000 - ₦28,000', location: 'Gbagada, Lagos', verified: true, bio: 'Professional culinary' },
+  { id: '90', name: 'Kabiru Mohammed', service: 'Builder', rating: 4.6, reviews: 38, price: '₦6,500 - ₦22,000', location: 'Alimosho, Lagos', verified: true, bio: 'Building services' },
+  { id: '91', name: 'Jennifer Obanor', service: 'Photographer', rating: 4.9, reviews: 49, price: '₦12,000 - ₦45,000', location: 'Lekki, Lagos', verified: true, bio: 'Professional photography' },
+  { id: '92', name: 'Usman Kareem', service: 'AC Technician', rating: 4.7, reviews: 26, price: '₦3,200 - ₦8,500', location: 'Somolu, Lagos', verified: true, bio: 'AC services' },
+  { id: '93', name: 'Favour Okafor', service: 'Makeup Artist', rating: 4.8, reviews: 44, price: '₦4,500 - ₦18,000', location: 'Ikoyi, Lagos', verified: true, bio: 'Beauty artist' },
+  { id: '94', name: 'Gideon Adeyemi', service: 'Locksmith', rating: 4.6, reviews: 19, price: '₦1,500 - ₦6,000', location: 'VI, Lagos', verified: true, bio: 'Lock services' },
+  { id: '95', name: 'Amina Salami', service: 'Dry Cleaning', rating: 4.7, reviews: 29, price: '₦800 - ₦2,500', location: 'Alagbole, Lagos', verified: true, bio: 'Professional cleaning' },
+  { id: '96', name: 'Ibrahim Olaleye', service: 'Mechanic', rating: 4.8, reviews: 40, price: '₦3,200 - ₦16,000', location: 'Yaba, Lagos', verified: true, bio: 'Auto repair expert' },
+  { id: '97', name: 'Ngozi Okezie', service: 'Florist', rating: 4.9, reviews: 36, price: '₦4,500 - ₦18,000', location: 'Gbagada, Lagos', verified: true, bio: 'Flower arrangements' },
+  { id: '98', name: 'Segun Adeyinka', service: 'Painter', rating: 4.7, reviews: 33, price: '₦2,800 - ₦11,000', location: 'Lekki, Lagos', verified: true, bio: 'Painting specialist' },
+  { id: '99', name: 'Zainab Yakubu', service: 'Cleaner', rating: 4.8, reviews: 46, price: '₦1,600 - ₦5,500', location: 'Ikoyi, Lagos', verified: true, bio: 'Cleaning services' },
+  { id: '100', name: 'Olalekan Adebayo', service: 'Web Developer', rating: 4.9, reviews: 27, price: '₦25,000 - ₦90,000', location: 'VI, Lagos', verified: true, bio: 'Web development expert' },
+  { id: '101', name: 'Deborah Okafor', service: 'Personal Trainer', rating: 4.8, reviews: 36, price: '₦2,800 - ₦9,500', location: 'Somolu, Lagos', verified: true, bio: 'Fitness training' },
+  { id: '102', name: 'Adex Mohammed', service: 'Security Guard', rating: 4.6, reviews: 31, price: '₦2,500 - ₦7,000', location: 'Ikeja, Lagos', verified: true, bio: 'Security services' },
 ];
 
 // Service categories available
 const SERVICE_CATEGORIES = [
-  'Electrician',
-  'Plumber',
-  'Builder',
-  'Barber',
-  'Cleaner',
-  'Tailor',
-  'Painter',
-  'AC Tech',
-  'Mechanic',
-  'Welder',
+  'Electrician', 'Plumber', 'Builder', 'Barber', 'Cleaner', 'Tailor', 'Painter', 
+  'AC Technician', 'Mechanic', 'Welder', 'Carpenter', 'Gas Fitter', 'Locksmith', 
+  'Florist', 'Photographer', 'Chef', 'Videographer', 'Graphic Designer', 'Web Developer',
+  'Mobile App Developer', 'UI/UX Designer', 'Data Analyst', 'Accountant', 'Tax Consultant',
+  'Legal Advisor', 'Real Estate Agent', 'Insurance Agent', 'Travel Agent', 'Tour Guide',
+  'Driver', 'Courier', 'Laundry Service', 'Dry Cleaning', 'Car Wash', 'Car Mechanic',
+  'Bicycle Repair', 'Phone Repair', 'Computer Repair', 'Laptop Repair', 'TV Repair',
+  'Appliance Repair', 'Generator Repair', 'Solar Installation', 'Security Guard', 'Personal Trainer',
+  'Yoga Instructor', 'Gym Trainer', 'Nutritionist', 'Beautician', 'Hairstylist', 'Makeup Artist',
+  'Massage Therapist', 'Physiotherapist', 'Home Tutor', 'Language Tutor', 'Music Teacher',
+  'Art Teacher', 'Driving Instructor', 'Swimming Coach', 'Fitness Coach', 'Life Coach'
 ];
 
 export default function DashboardScreen() {
@@ -149,6 +164,7 @@ export default function DashboardScreen() {
   // State management
   const [selectedLocation, setSelectedLocation] = useState('All Locations');
   const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [filteredProfessionals, setFilteredProfessionals] = useState(DUMMY_PROFESSIONALS);
 
   // Styling
@@ -382,10 +398,15 @@ export default function DashboardScreen() {
 
   // Handle category filter
   const handleCategoryFilter = (category: string) => {
-    const filtered = DUMMY_PROFESSIONALS.filter(p =>
-      p.service.toLowerCase() === category.toLowerCase()
-    );
-    setFilteredProfessionals(filtered);
+    setSelectedCategory(selectedCategory === category ? null : category);
+    if (selectedCategory === category) {
+      setFilteredProfessionals(DUMMY_PROFESSIONALS);
+    } else {
+      const filtered = DUMMY_PROFESSIONALS.filter(p =>
+        p.service.toLowerCase() === category.toLowerCase()
+      );
+      setFilteredProfessionals(filtered);
+    }
     setSearchQuery('');
   };
 
@@ -479,13 +500,16 @@ export default function DashboardScreen() {
                 key={category}
                 style={[
                   styles.categoryButton,
-                  searchQuery === '' && filteredProfessionals.length === DUMMY_PROFESSIONALS.length
-                    ? {}
-                    : styles.categoryButtonActive,
+                  selectedCategory === category ? styles.categoryButtonActive : {},
                 ]}
                 onPress={() => handleCategoryFilter(category)}
               >
-                <Text style={styles.categoryButtonText}>{category}</Text>
+                <Text style={[
+                  styles.categoryButtonText,
+                  selectedCategory === category ? styles.categoryButtonTextActive : {},
+                ]}>
+                  {category}
+                </Text>
               </TouchableOpacity>
             ))}
           </ScrollView>
