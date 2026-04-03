@@ -99,10 +99,11 @@ const PROFESSIONAL_DETAILS = {
 
 export default function LaborerProfileScreen() {
   const router = useRouter();
-  const { id } = useLocalSearchParams();
+  const { id } = useLocalSearchParams<{ id?: string }>();
 
   // Get professional details (use default if not found)
-  const professional = PROFESSIONAL_DETAILS[id] || PROFESSIONAL_DETAILS['1'];
+  const professionalId = (Array.isArray(id) ? id[0] : id) || '1';
+  const professional = PROFESSIONAL_DETAILS[professionalId as keyof typeof PROFESSIONAL_DETAILS] || PROFESSIONAL_DETAILS['1'];
   const [loading, setLoading] = useState(false);
 
   const styles = StyleSheet.create({
@@ -372,7 +373,7 @@ export default function LaborerProfileScreen() {
         {/* Services Section */}
         <Text style={styles.sectionHeader}>Services Offered</Text>
         <View style={styles.serviceList}>
-          {professional.services.map((service, index) => (
+          {professional.services.map((service: string, index: number) => (
             <Text key={index} style={styles.serviceItem}>
               • {service}
             </Text>

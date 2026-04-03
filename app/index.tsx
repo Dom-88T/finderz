@@ -266,7 +266,7 @@ export default function WelcomeScreen() {
           {/* Demo mode - try without registration */}
           <TouchableOpacity 
             style={styles.demoButton}
-            onPress={() => router.push('/dashboard/index')} // Go directly to dashboard in demo mode
+            onPress={() => router.replace('/dashboard')}
             activeOpacity={0.8}
           >
             <Text style={styles.demoButtonText}>Try Demo - Browse Without Logging In</Text>

@@ -368,7 +368,7 @@ export default function DashboardScreen() {
   });
 
   // Handle search
-  const handleSearch = (text) => {
+  const handleSearch = (text: string) => {
     setSearchQuery(text);
     
     // Filter by service type or professional name
@@ -381,7 +381,7 @@ export default function DashboardScreen() {
   };
 
   // Handle category filter
-  const handleCategoryFilter = (category) => {
+  const handleCategoryFilter = (category: string) => {
     const filtered = DUMMY_PROFESSIONALS.filter(p =>
       p.service.toLowerCase() === category.toLowerCase()
     );

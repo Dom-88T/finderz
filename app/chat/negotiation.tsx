@@ -84,11 +84,12 @@ const PROFESSIONAL_NAMES = {
 
 export default function NegotiationScreen() {
   const router = useRouter();
-  const { id } = useLocalSearchParams();
-  const scrollViewRef = useRef(null);
+  const { id } = useLocalSearchParams<{ id?: string }>();
+  const scrollViewRef = useRef<ScrollView>(null);
   const [messages, setMessages] = useState(SAMPLE_MESSAGES);
   const [inputText, setInputText] = useState('');
-  const professionalName = PROFESSIONAL_NAMES[id] || 'Professional';
+  const professionalId = (Array.isArray(id) ? id[0] : id) || '1';
+  const professionalName = PROFESSIONAL_NAMES[professionalId as keyof typeof PROFESSIONAL_NAMES] || 'Professional';
 
   const styles = StyleSheet.create({
     container: {

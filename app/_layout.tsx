@@ -24,8 +24,6 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerShown: false, // Hide default headers - we'll create custom ones
-          animationEnabled: true,
-          animationTypeForReplace: false, // Smooth transitions between screens
           contentStyle: {
             backgroundColor: '#FFFFFF', // White background globally
           },
@@ -54,7 +52,7 @@ export default function RootLayout() {
       </Stack>
       
       {/* Status bar styling - light background with dark text */}
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
+      <StatusBar barStyle="dark-content" />
     </>
   );
 }
