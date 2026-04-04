@@ -4,9 +4,6 @@
   "installCommand": "npm install",
   "framework": "expo",
   "outputDirectory": ".expo/web",
-  "env": {
-    "EXPO_PUBLIC_API_URL": "@expo_public_api_url"
-  },
   "headers": [
     {
       "source": "/(.*)",
