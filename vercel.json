@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "devCommand": "npm run web",
+  "devCommand": "npm run dev",
   "outputDirectory": ".expo/web",
-  "framework": "astro"
+  "framework": "vite"
 }
